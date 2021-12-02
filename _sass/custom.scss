@@ -1,0 +1,79 @@
+* {
+    transition: background-color 0.5s ease;
+}
+
+#topbar-wrapper {
+    border-bottom: none;
+    background-color: transparent;
+}
+
+#sidebar {
+    background-image: url("https://ratentei.sirv.com/Images/");
+}
+
+@mixin dark-custom {
+    #sidebar {
+        box-shadow: 4px 0px 25px #1d2021;
+        background: #27292b8a;
+    }
+    #topbar-wrapper {
+        box-shadow: 0px 13px 23px -20px #1d2021;
+    }
+}
+
+@mixin light-custom {
+    #sidebar {
+        box-shadow: 4px 0px 25px #1d20214f;
+        background: rgba(194, 196, 201, 0.315);
+    }
+    #topbar-wrapper {
+        box-shadow: 0px 13px 23px -20px #1d2021c2;
+    }
+}
+
+@mixin dots($count) {
+    $text-shadow: ();
+    @for $i from 0 through $count {
+        $text-shadow: $text-shadow,
+            (-0.5+ (random()) * 3) + em (-0.5+ (random()) * 3) + em 5px hsla(random() * 360, 100%, 50%, 1);
+    }
+    text-shadow: $text-shadow;
+}
+
+#sidebar {
+    display: block;
+    color: transparent;
+}
+
+#sidebar::before,
+#sidebar::after {
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    width: 4em;
+    height: 4em;
+    content: ".";
+    mix-blend-mode: screen;
+    animation: 44s -27s move infinite ease-in-out alternate;
+}
+
+#sidebar::before {
+    @include dots(100);
+    animation-duration: 44s;
+    animation-delay: -27s;
+}
+
+#sidebar::after {
+    @include dots(100);
+    animation-duration: 43s;
+    animation-delay: -32s;
+}
+
+@keyframes move {
+    from {
+        transform: rotate(0deg) scale(14) translateX(-5px);
+    }
+    to {
+        transform: rotate(360deg) scale(18) translateX(5px);
+    }
+}

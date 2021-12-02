@@ -6,18 +6,18 @@
   /* Framework color */
   --body-bg: var(--main-wrapper-bg);
   --mask-bg: rgb(68, 69, 70);
-  --main-wrapper-bg: rgb(27, 27, 30);
+  --main-wrapper-bg: #2a2d2f; // Default rgb(27, 27, 30)
   --main-border-color: rgb(44, 45, 45);
   --scrollbar-track-bg: rgba(0, 0, 0, 0.3);
   --scrollbar-thumb-bg: rgb(173 171 171 / 50%);
 
   /* Common color */
   --text-color: rgb(175, 176, 177);
-  --text-muted-color: rgb(107, 116, 124);
+  --text-muted-color:  Default rgb(107, 116, 124);
   --heading-color: #cccccc;
   --blockquote-border-color: rgb(66, 66, 66);
   --blockquote-text-color: rgb(117, 117, 117);
-  --link-color: rgb(138, 180, 248);
+  --link-color: #54BFBF;// Default rgb(138, 180, 248);
   --link-underline-color: rgb(82, 108, 150);
   --button-bg: rgb(39, 40, 43);
   --btn-border-color: rgb(63, 65, 68);
@@ -38,7 +38,7 @@
 
   /* Topbar */
   --topbar-text-color: var(--text-color);
-  --topbar-wrapper-bg: rgb(39, 40, 43);
+  --topbar-wrapper-bg: transparent;// Default rgb(39, 40, 43)
   --search-wrapper-bg: rgb(34, 34, 39);
   --search-wrapper-border-color: rgb(34, 34, 39);
   --search-icon-color: rgb(100, 102, 105);
@@ -133,11 +133,16 @@
     background-image:
       linear-gradient(
         to left,
-        rgb(26, 26, 30),
+        #2a2d2f,
+        #25282A,
+        #1D2021,
+        #25282A,
+        #2a2d2f
+        /*rgb(26, 26, 30),
         rgb(39, 39, 45),
         rgb(39, 39, 45),
         rgb(39, 39, 45),
-        rgb(26, 26, 30)
+        rgb(26, 26, 30)*/
       );
 
   }
